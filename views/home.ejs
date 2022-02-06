@@ -1,0 +1,24 @@
+<%- include('partials/header'); -%>
+<h1><%= title %></h1>
+
+<p><%= para %></p>
+
+
+
+<% posts.forEach(function(post){ %>
+    <h2><%= post.title %></h2>
+    <div>
+    <% var url= "/posts/" + post.title; %>
+    <p >
+        <%= post.content.substring(0, 100) + "..." %>
+        <a href=<%= url %>>Read more</a> 
+    </p> 
+
+
+    </div>
+
+<% }); %>
+
+<button class="btn btn-small btn-primary" onclick="document.location='compose'">Compose</button>
+
+<%- include('partials/footer'); -%>
